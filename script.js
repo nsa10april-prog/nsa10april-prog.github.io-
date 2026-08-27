@@ -10,7 +10,7 @@ const today = document.getElementById("today");
 let tasks = JSON.parse(localStorage.getItem("taskflow-tasks")) || [];
 let currentFilter = "all";
 
-// Set tanggal hari ini
+
 today.textContent = new Date().toLocaleDateString("id-ID", {
     weekday: "long",
     day: "numeric",
@@ -106,7 +106,6 @@ function renderTasks() {
     emptyState.style.display = filteredTasks.length === 0 ? "block" : "none";
 }
 
-// Event listeners
 addBtn.addEventListener("click", addTask);
 
 taskInput.addEventListener("keydown", event => {

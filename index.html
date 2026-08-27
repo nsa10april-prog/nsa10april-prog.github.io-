@@ -1,408 +1,62 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terima Kasih, Kak Almer </title>
-  <!-- Font Google untuk kesan manis & modern -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome 6 (gratis) untuk ikon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(145deg, #fff9f0 0%, #ffe9d6 100%);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      margin: 0;
-    }
-
-    .card {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(255, 247, 240, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 56px 56px 56px 56px;
-      box-shadow: 0 30px 60px rgba(180, 100, 60, 0.25),
-                  inset 0 1px 4px rgba(255, 255, 255, 0.6);
-      padding: 40px 32px 48px;
-      transition: all 0.2s ease;
-      border: 1px solid rgba(255, 215, 180, 0.4);
-      text-align: center;
-    }
-
-    /* elemen dekoratif */
-    .badge-mpls {
-      display: inline-block;
-      background: #f7d5b0;
-      padding: 8px 22px;
-      border-radius: 60px;
-      color: #7a4a2e;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 8px rgba(150, 80, 40, 0.1);
-      border: 1px solid #fae1c0;
-    }
-
-    .avatar-icon {
-      font-size: 68px;
-      color: #c27a4a;
-      background: #ffedd9;
-      width: 120px;
-      height: 120px;
-      line-height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      box-shadow: 0 12px 24px rgba(160, 90, 50, 0.2);
-      border: 3px solid #fce3cb;
-      transition: transform 0.3s;
-    }
-
-    .avatar-icon:hover {
-      transform: scale(1.02) rotate(2deg);
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #4b2a1a;
-      margin: 8px 0 4px;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-    }
-
-    .sub-judul {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #8f5e3e;
-      background: rgba(235, 195, 160, 0.25);
-      display: inline-block;
-      padding: 6px 24px;
-      border-radius: 40px;
-      margin-bottom: 28px;
-      backdrop-filter: blur(2px);
-      border: 1px solid #f7dcc8;
-    }
-
-    .highlight-name {
-      background: linear-gradient(135deg, #b46f42, #9b5d34);
-      color: white;
-      padding: 0 14px;
-      border-radius: 40px;
-      font-weight: 700;
-      display: inline-block;
-      box-shadow: 0 4px 8px rgba(130, 70, 30, 0.2);
-    }
-
-    .pesan-utama {
-      background: rgba(255, 235, 215, 0.5);
-      backdrop-filter: blur(4px);
-      border-radius: 48px;
-      padding: 28px 24px;
-      margin: 24px 0 28px;
-      border: 1px solid #fadbc0;
-      box-shadow: inset 0 2px 6px rgba(255, 215, 180, 0.6);
-    }
-
-    .pesan-utama p {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: #3b2417;
-      font-weight: 500;
-    }
-
-    .pesan-utama i {
-      color: #c2774a;
-      margin: 0 4px;
-    }
-
-    .hari-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px 12px;
-      margin: 24px 0 30px;
-    }
-
-    .hari-item {
-      background: white;
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-weight: 600;
-      color: #4d2f1c;
-      box-shadow: 0 6px 12px rgba(150, 80, 40, 0.08);
-      border: 1px solid #fadbc6;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-    }
-
-    .hari-item i {
-      color: #bc7a4a;
-      font-size: 1rem;
-    }
-
-    .hari-item span {
-      background: #f7e2d0;
-      padding: 0 10px;
-      border-radius: 40px;
-      color: #6b3f24;
-      font-weight: 700;
-    }
-
-    .btn-ucapan {
-      background: #b16f42;
-      border: none;
-      color: white;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 16px 36px;
-      border-radius: 60px;
-      cursor: pointer;
-      box-shadow: 0 12px 20px rgba(160, 90, 50, 0.25);
-      transition: 0.15s ease;
-      margin: 12px 0 8px;
-      border: 1px solid #dba97a;
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .btn-ucapan i {
-      font-size: 1.2rem;
-    }
-
-    .btn-ucapan:hover {
-      background: #9f5f34;
-      transform: scale(1.02);
-      box-shadow: 0 16px 28px rgba(140, 70, 30, 0.35);
-    }
-
-    .btn-ucapan:active {
-      transform: scale(0.97);
-    }
-
-    .footer-note {
-      margin-top: 32px;
-      border-top: 2px dashed #eccab2;
-      padding-top: 24px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px 24px;
-      color: #6f4d33;
-      font-weight: 500;
-    }
-
-    .footer-note i {
-      color: #b66d3e;
-      margin-right: 6px;
-    }
-
-    /* efek bintang kecil (responsive) */
-    .glow-emoji {
-      display: inline-block;
-      animation: float 3s infinite alternate ease-in-out;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-6px); }
-    }
-
-    
-    @media (max-width: 500px) {
-      .card {
-        padding: 32px 18px 32px;
-        border-radius: 40px;
-      }
-      h1 {
-        font-size: 1.9rem;
-      }
-      .avatar-icon {
-        width: 96px;
-        height: 96px;
-        line-height: 96px;
-        font-size: 52px;
-      }
-      .pesan-utama p {
-        font-size: 1rem;
-      }
-      .hari-item {
-        font-size: 0.85rem;
-        padding: 6px 16px;
-      }
-      .btn-ucapan {
-        padding: 14px 28px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskflow - To Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card" role="main" aria-label="Kartu ucapan terima kasih untuk Kak Gugus">
+    <main class="app">
+        <header class="header">
+            <div>
+                <p class="eyebrow">MY PRODUCTIVITY</p>
+                <h1>TASK<span>FLOW</span></h1>
+                <p class="subtitle">
+                    Atur tugasmu, selesaikan satu per satu.
+                </p>
+            </div>
+            <div class="date" id="today"></div>
+        </header>
 
-    
-    <div class="badge-mpls">
-      <i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> MPLS 2026
-    </div>
+        <section class="input-card card">
+            <input
+                id="taskInput"
+                type="text"
+                placeholder="Tulis tugas baru..."
+                maxlength="100"
+            >
+            <button id="addBtn">+ Tambah</button>
+        </section>
 
-    
-    <div class="avatar-icon">
-      <i class="fas fa-heart" style="color: #c96f3a; text-shadow: 0 4px 8px rgba(200,100,50,0.2);"></i>
-    </div>
+        <section class="toolbar">
+            <div class="stats">
+                <span id="totalCount">0 tugas</span>
+                <span id="doneCount">0 selesai</span>
+            </div>
+            <div class="filters">
+                <button class="filter active" data-filter="all">Semua</button>
+                <button class="filter" data-filter="active">Belum selesai</button>
+                <button class="filter" data-filter="completed">Selesai</button>
+            </div>
+        </section>
 
-   
-    <h1>
-      Terima Kasih, <br class="mobile-break" />
-      <span class="highlight-name">Kak ALMER</span>
-    </h1>
-    <div class="sub-judul">
-      <i class="fas fa-star" style="color: #d68d4c; margin-right: 6px;"></i> 
-      Untuk 4 Hari Penuh Cerita
-      <i class="fas fa-star" style="color: #d68d4c; margin-left: 6px;"></i>
-    </div>
+        <ul id="taskList" class="task-list"></ul>
 
-   
-    <div class="pesan-utama">
-      <p>
-        <i class="fas fa-quote-left" style="opacity: 0.5; font-size: 1.4rem; vertical-align: middle;"></i>
-        &nbsp; Terima kasih sebesar-besarnya untuk kakak gugus yang luar biasa. 
-        Selama <strong>4 hari MPLS</strong> ini, kakak selalu sabar, ceria, dan 
-        memberi semangat tanpa henti. Senyum dan perhatian kakak membuat hari-hari 
-        terasa lebih ringan & hangat,dan terimakasih sudah membantu membuat yel-yel .
-        <i class="fas fa-quote-right" style="opacity: 0.5; font-size: 1.4rem; vertical-align: middle;"></i>
-      </p>
-    </div>
+        <div id="emptyState" class="empty">
+            <div class="empty-icon">✓</div>
+            <h2>Belum ada tugas</h2>
+            <p>
+                Tambahkan tugas pertamamu di atas.
+            </p>
+        </div>
 
-    <
-    <div class="hari-list">
-      <div class="hari-item"><i class="fas fa-sun"></i> Hari 1 <span>☀️</span></div>
-      <div class="hari-item"><i class="fas fa-cloud-sun"></i> Hari 2 <span>🌤️</span></div>
-      <div class="hari-item"><i class="fas fa-smile"></i> Hari 3 <span>😊</span></div>
-      <div class="hari-item"><i class="fas fa-heart"></i> Hari 4 <span>❤️</span></div>
-    </div>
-
-   
-    <button class="btn-ucapan" id="ucapButton">
-      <i class="fas fa-hand-peace"></i> Ucapkan Terima Kasih
-      <i class="fas fa-arrow-right"></i>
-    </button>
-
-    
-    <div class="footer-note">
-      <span><i class="fas fa-hands-helping"></i> Selalu di hati</span>
-      <span><i class="fas fa-gem"></i> 4 hari berkesan</span>
-      <span><i class="fas fa-crown"></i> #KakGugusTerbaik</span>
-    </div>
-
-   >
-    <div style="margin-top: 16px; font-size: 0.9rem; color: #a87553; opacity: 0.9; letter-spacing: 0.3px;">
-      <i class="fas fa-arrow-up" style="color: #bf7a47;"></i> 
-      <span class="glow-emoji">✨</span> dari aku 
-      <span class="glow-emoji">✨</span>
-    </div>
-  </div>
-
-  <script>
-    (function() {
-      const button = document.getElementById('ucapButton');
-      const card = document.querySelector('.card');
-
-      
-      const variasiUcapan = [
-        'Terima kasih Kak Almer 🥰 4 hari ini sungguh berharga.',
-        'Kak Gugus, kakak luar biasa! ❤️ Semoga sehat selalu.',
-        'Makasih banyak Kak Almer! Senyum kakak bikin hari cerah ☀️',
-        'Terima kasih sudah sabar dan ceria menemani 🙌',
-        'Kak almer, keren banget! 4 hari tak terlupakan 🌟',
-        'Terima kasih atas semua perhatian dan tawa bersama Kak 😄',
-        
-      ];
-
-      
-      function tampilkanUcapan() {
-       
-        const pesanElement = document.querySelector('.pesan-utama p');
-        if (!pesanElement) return;
-
-       
-        const randomIndex = Math.floor(Math.random() * variasiUcapan.length);
-        const pesanBaru = variasiUcapan[randomIndex];
-
-        
-        pesanElement.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
-        pesanElement.style.opacity = '0';
-        pesanElement.style.transform = 'scale(0.96)';
-
-        setTimeout(() => {
-          
-          const quoteLeft = '<i class="fas fa-quote-left" style="opacity: 0.5; font-size: 1.4rem; vertical-align: middle;"></i>&nbsp;';
-          const quoteRight = '&nbsp;<i class="fas fa-quote-right" style="opacity: 0.5; font-size: 1.4rem; vertical-align: middle;"></i>';
-         
-          pesanElement.innerHTML = `${quoteLeft} ${pesanBaru} ${quoteRight}`;
-          
-         
-          pesanElement.style.opacity = '1';
-          pesanElement.style.transform = 'scale(1)';
-        }, 200);
-      }
-
-
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        tampilkanUcapan();
-
-        
-        button.style.transform = 'scale(0.96)';
-        setTimeout(() => {
-          button.style.transform = 'scale(1)';
-        }, 120);
-
-        
-        if (navigator.vibrate) {
-          navigator.vibrate(12);
-        }
-      });
-
-     
-      button.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          button.click();
-        }
-      });
-
-      
-      setTimeout(() => {
-      
-        const pesanElement = document.querySelector('.pesan-utama p');
-        if (pesanElement) {
-          pesanElement.style.transition = 'opacity 0.6s';
-          pesanElement.style.opacity = '0.9';
-          setTimeout(() => {
-            pesanElement.style.opacity = '1';
-          }, 100);
-        }
-      }, 400);
-    })();
-  </script>
+        <footer>
+            <button id="clearCompleted" class="clear-btn">
+                Hapus tugas yang selesai
+            </button>
+        </footer>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

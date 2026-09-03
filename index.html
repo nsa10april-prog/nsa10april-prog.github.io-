@@ -1,62 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskflow - To Do List</title>
+    <title>Kalkulator Sederhana</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="app">
-        <header class="header">
-            <div>
-                <p class="eyebrow">MY PRODUCTIVITY</p>
-                <h1>TASK<span>FLOW</span></h1>
-                <p class="subtitle">
-                    Atur tugasmu, selesaikan satu per satu.
-                </p>
-            </div>
-            <div class="date" id="today"></div>
-        </header>
+    <div class="calculator">
+        <input type="text" id="display" class="display" disabled>
+        <div class="buttons">
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button operator" onclick="appendToDisplay('/')">÷</button>
 
-        <section class="input-card card">
-            <input
-                id="taskInput"
-                type="text"
-                placeholder="Tulis tugas baru..."
-                maxlength="100"
-            >
-            <button id="addBtn">+ Tambah</button>
-        </section>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button operator" onclick="appendToDisplay('*')">×</button>
 
-        <section class="toolbar">
-            <div class="stats">
-                <span id="totalCount">0 tugas</span>
-                <span id="doneCount">0 selesai</span>
-            </div>
-            <div class="filters">
-                <button class="filter active" data-filter="all">Semua</button>
-                <button class="filter" data-filter="active">Belum selesai</button>
-                <button class="filter" data-filter="completed">Selesai</button>
-            </div>
-        </section>
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button operator" onclick="appendToDisplay('-')">-</button>
 
-        <ul id="taskList" class="task-list"></ul>
-
-        <div id="emptyState" class="empty">
-            <div class="empty-icon">✓</div>
-            <h2>Belum ada tugas</h2>
-            <p>
-                Tambahkan tugas pertamamu di atas.
-            </p>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button operator" onclick="appendToDisplay('+')">+</button>
+            <button class="button operator" onclick="calculate()">=</button>
         </div>
-
-        <footer>
-            <button id="clearCompleted" class="clear-btn">
-                Hapus tugas yang selesai
-            </button>
-        </footer>
-    </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

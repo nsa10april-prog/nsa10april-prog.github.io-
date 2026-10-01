@@ -7,9 +7,9 @@ body {
     width: 150px;
     height: 150px;
     background-color: yellow;
-    border-radius: 50%;
+    border-radius: 50%; 
     
-   
+    
     position: relative; 
 }
 
@@ -20,18 +20,19 @@ body {
     background-color: black;
     border-radius: 50%; 
     
-   
+    
     position: absolute;
     top: 40px; 
 }
 
-
+.mata-kiri {
     left: 40px;
 }
 
 .mata-kanan {
     right: 40px;
 }
+
 
 .mulut-sedih {
     width: 50px;
@@ -44,7 +45,7 @@ body {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     
-    
+   
     position: absolute;
     bottom: 35px; 
     left: 50px;   

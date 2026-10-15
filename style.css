@@ -1,36 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-image: url('ダウンロード (1).jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
+    background: url('img/ダウンロード (1).jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Kotak luar (pembungkus utama) */
+#card {
+    background-color: white;
+    width: 250px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 8px;
+    padding: 20px;
+} 
+
 .body {
-    background-color: rgba(238, 233, 233, 0.433);
-    border-radius: 30px; /* Diubah agar tidak terlalu bulat melingkar */
+    background-color: rgb(238 233 233 / 24%);
+    border-radius: 30px; 
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+    width: 350px; 
     padding: 20px; 
-    width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+} 
 
-/* Styling tambahan untuk tombol agar rapi */
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
+.box-profile {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid lime;
+    margin: 0 auto 15px auto; 
 }
 
-button:hover {
-  background-color: #555;
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}    
+
+.header, .profile-info {
+    position: relative;
+    z-index: 2;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #f9f7f7;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.profile-info p {
+    font-size: 20px;
+    color: #f0f0f0;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
